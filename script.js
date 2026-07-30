@@ -84,3 +84,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+window.onload = () => {
+
+const loader = document.getElementById("loader");
+
+loader.style.opacity = "0";
+
+setTimeout(() => {
+
+loader.style.display = "none";
+
+},600);
+
+};
+
+const saveBtn=document.querySelector(".primary");
+
+const toast=document.getElementById("toast");
+
+saveBtn.addEventListener("click",()=>{
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2500);
+
+});
