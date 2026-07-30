@@ -185,26 +185,32 @@ p{
 
     align-items:center;
 
-    gap:22px;
+    gap:28px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
 }
 
 .logo{
 
-    width:92px;
-    height:92px;
+    width:120px;
+    height:120px;
 
     object-fit:contain;
 
     background:transparent;
+
+    border:none;
 
     border-radius:0;
 
     padding:0;
 
     box-shadow:none;
+
+    transform:translateY(-4px);
+
+    transition:.3s ease;
 
 }
 
