@@ -1,0 +1,21 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Chua;Brandon;;;
+FN:Brandon Chua
+ORG:Chua Tong Hin Marketing Sdn. Bhd.
+TITLE:Director
+
+TEL;TYPE=CELL:+60123046180
+TEL;TYPE=VOICE:+60123046180
+
+EMAIL;TYPE=WORK:chuatonghin@gmail.com
+
+URL:https://YOUR_GITHUB_USERNAME.github.io/brandon-business-card/
+
+ADR;TYPE=WORK:;;Chua Tong Hin Marketing Sdn. Bhd.;;;;Malaysia
+
+NOTE:\
+HQ Waze: https://waze.com/ul/hw2860y1bw\
+Warehouse Waze: https://waze.com/ul/hw281eju5t
+
+END:VCARD
