@@ -114,3 +114,109 @@ p{
     opacity:.95;
     margin-bottom:28px;
 }
+
+.button-group{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    width:100%;
+    height:58px;
+    border-radius:18px;
+    font-size:17px;
+    font-weight:600;
+    color:#fff;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    backdrop-filter:blur(20px);
+    transition:all .3s ease;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.02);
+    background:rgba(255,255,255,.22);
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+}
+
+.btn:active{
+    transform:scale(.96);
+}
+
+.primary{
+    background:linear-gradient(135deg,#f59e0b,#ea580c);
+    border:none;
+    color:#fff;
+    box-shadow:0 12px 30px rgba(245,158,11,.45);
+}
+
+.primary:hover{
+    background:linear-gradient(135deg,#fbbf24,#f97316);
+}
+
+button.btn{
+    outline:none;
+}
+
+@media(max-width:480px){
+
+.container{
+    padding:20px;
+}
+
+.glass-card{
+    padding:28px 20px;
+    border-radius:28px;
+}
+
+.profile{
+    width:135px;
+    height:135px;
+}
+
+.logo{
+    width:80px;
+}
+
+h1{
+    font-size:30px;
+}
+
+h2{
+    font-size:18px;
+}
+
+.btn{
+    height:54px;
+    font-size:16px;
+}
+
+}
+
+.fade-in{
+    animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.glass-card{
+    animation:fadeIn 1s ease;
+}
