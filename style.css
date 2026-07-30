@@ -604,3 +604,41 @@ a{
     }
 
 }
+
+/* Toast */
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:40px;
+
+    transform:translateX(-50%);
+
+    background:#1d1d1f;
+
+    color:#fff;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+}
