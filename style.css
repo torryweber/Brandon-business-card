@@ -220,3 +220,36 @@ transform:translateY(0);
 .glass-card{
     animation:fadeIn 1s ease;
 }
+
+.btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.45);
+
+transform:scale(0);
+
+animation:ripple .6s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
