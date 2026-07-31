@@ -36,7 +36,12 @@ body{
 
     font-family:"Inter",sans-serif;
 
-    background:#090909;
+    background:linear-gradient(
+    180deg,
+    #b56a16 0%,
+    #8d5212 50%,
+    #6f3f0c 100%
+);
 
     color:var(--text);
 
