@@ -1,21 +1,31 @@
-// ======================================
-// Brandon Chua Digital Business Card
-// Apple Inspired
-// ======================================
+/* ==========================================
+   Brandon Digital Card
+   Premium Apple Interaction
+========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const shareButton = document.getElementById("shareButton");
+    const card = document.querySelector(".card");
 
-    // Native Share API
+    // Create Lucide icons
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
+    // Native Share
     if (shareButton) {
 
         shareButton.addEventListener("click", async () => {
 
             const shareData = {
+
                 title: "Brandon Chua",
+
                 text: "Director | Chua Tong Hin Marketing Sdn. Bhd.",
+
                 url: window.location.href
+
             };
 
             if (navigator.share) {
@@ -24,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     await navigator.share(shareData);
 
-                } catch (err) {
+                } catch (e) {
 
-                    console.log("Share cancelled.");
+                    console.log("Share cancelled");
 
                 }
 
@@ -40,83 +50,105 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // Button press animation
+    // Ripple Press Effect
 
     document.querySelectorAll(".actionButton,.saveButton,.shareButton")
-        .forEach(button => {
+    .forEach(button=>{
 
-            button.addEventListener("touchstart", () => {
+        button.addEventListener("pointerdown",(e)=>{
 
-                button.style.transform = "scale(.96)";
+            const ripple=document.createElement("span");
 
-            }, { passive: true });
+            ripple.className="ripple";
 
-            button.addEventListener("touchend", () => {
+            const rect=button.getBoundingClientRect();
 
-                button.style.transform = "";
+            ripple.style.left=(e.clientX-rect.left)+"px";
 
-            });
+            ripple.style.top=(e.clientY-rect.top)+"px";
 
-            button.addEventListener("mouseleave", () => {
+            button.appendChild(ripple);
 
-                button.style.transform = "";
+            setTimeout(()=>{
 
-            });
+                ripple.remove();
 
-        });
-
-});
-
-// ===============================
-// Copy URL
-// ===============================
-
-function copyLink() {
-
-    navigator.clipboard.writeText(window.location.href)
-        .then(() => {
-
-            showToast("Link copied");
-
-        })
-        .catch(() => {
-
-            prompt("Copy this link:", window.location.href);
+            },600);
 
         });
-
-}
-
-// ===============================
-// Toast
-// ===============================
-
-function showToast(message) {
-
-    let toast = document.createElement("div");
-
-    toast.className = "toast";
-
-    toast.innerText = message;
-
-    document.body.appendChild(toast);
-
-    requestAnimationFrame(() => {
-
-        toast.classList.add("show");
 
     });
 
-    setTimeout(() => {
+    // Glass Spotlight
 
-        toast.classList.remove("show");
+    if(card){
 
-        setTimeout(() => {
+        card.addEventListener("pointermove",(e)=>{
 
-            toast.remove();
+            const rect=card.getBoundingClientRect();
 
-        }, 300);
+            const x=e.clientX-rect.left;
 
-    }, 1800);
+            const y=e.clientY-rect.top;
+
+            card.style.setProperty("--x",x+"px");
+
+            card.style.setProperty("--y",y+"px");
+
+        });
+
+    }
+
+});
+
+/* Copy Link */
+
+function copyLink(){
+
+    navigator.clipboard.writeText(window.location.href)
+
+    .then(()=>{
+
+        toast("Link copied");
+
+    })
+
+    .catch(()=>{
+
+        toast("Unable to copy");
+
+    });
+
+}
+
+/* Toast */
+
+function toast(text){
+
+    let t=document.createElement("div");
+
+    t.className="toast";
+
+    t.innerHTML=text;
+
+    document.body.appendChild(t);
+
+    requestAnimationFrame(()=>{
+
+        t.classList.add("show");
+
+    });
+
+    setTimeout(()=>{
+
+        t.classList.remove("show");
+
+        setTimeout(()=>{
+
+            t.remove();
+
+        },300);
+
+    },1800);
 
 }
