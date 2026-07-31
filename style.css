@@ -607,3 +607,305 @@ p{
     height:22px;
 
 }
+
+/* ==========================================
+   Premium Glow Animation
+========================================== */
+
+@keyframes leftGlow{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(60px,40px)
+        scale(1.18);
+
+    }
+
+    100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+}
+
+@keyframes rightGlow{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(-60px,-40px)
+        scale(1.15);
+
+    }
+
+    100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   Card Shine
+========================================== */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:520px;
+
+    top:-180px;
+
+    left:-260px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.08),
+
+        transparent
+
+    );
+
+    transform:rotate(20deg);
+
+    animation:shine 8s linear infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-280px;
+
+    }
+
+    to{
+
+        left:520px;
+
+    }
+
+}
+
+/* ==========================================
+   Floating Card
+========================================== */
+
+.card{
+
+    animation:
+
+    cardFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   iPhone Touch
+========================================== */
+
+.actionButton,
+.saveButton,
+.shareButton{
+
+    cursor:pointer;
+
+    -webkit-touch-callout:none;
+
+    -webkit-user-select:none;
+
+    user-select:none;
+
+}
+
+/* ==========================================
+   Better Scroll Behaviour
+========================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width:430px){
+
+    .container{
+
+        max-width:100%;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+        border-radius:30px;
+
+    }
+
+    .top{
+
+        gap:20px;
+
+    }
+
+    .logo{
+
+        width:125px;
+
+        height:90px;
+
+    }
+
+    .profile{
+
+        width:96px;
+
+        height:96px;
+
+    }
+
+    h1{
+
+        font-size:32px;
+
+    }
+
+    h2{
+
+        font-size:17px;
+
+    }
+
+    p{
+
+        font-size:14px;
+
+    }
+
+    .saveButton{
+
+        height:56px;
+
+        font-size:16px;
+
+    }
+
+    .actionButton{
+
+        height:76px;
+
+    }
+
+    .shareButton{
+
+        height:54px;
+
+        font-size:15px;
+
+    }
+
+}
+
+/* ==========================================
+   Toast Message
+========================================== */
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:translateX(-50%);
+
+    background:#1d1d1f;
+
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+}
