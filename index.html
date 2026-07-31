@@ -1,294 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<title>Brandon Chua | Director</title>
-
-<meta name="description"
-content="Digital Business Card">
-
-<meta name="theme-color"
-content="#f58220">
-
-<meta property="og:title"
-content="Brandon Chua">
-
-<meta property="og:description"
-content="Director | Chua Tong Hin Marketing Sdn. Bhd.">
-
-<meta property="og:image"
-content="preview.jpg">
-
-<meta property="og:type"
-content="website">
-
-<meta property="og:url"
-content="https://YOUR_GITHUB_USERNAME.github.io/brandon-business-card/">
-
-<link rel="manifest"
-href="manifest.json">
-
-<link rel="apple-touch-icon"
-href="apple-touch-icon.png">
-
-<link rel="icon"
-href="favicon.png">
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet"
-href="style.css">
-
-</head>
-
 <body>
 
 <div class="background"></div>
 
 <div class="container">
 
-<div class="card">
+    <div class="card">
 
-<!-- Top -->
+        <div class="top">
 
-<div class="top">
+            <img src="logo.png"
+                 class="logo"
+                 alt="Company Logo">
 
-<img
-src="logo.png"
-class="logo"
-alt="Logo">
+            <img src="profile.jpg"
+                 class="profile"
+                 alt="Brandon Chua">
 
-<img
-src="profile.jpg"
-class="profile"
-alt="Brandon">
+        </div>
 
-</div>
+        <h1>Brandon Chua</h1>
 
-<!-- Name -->
+        <h2>Director</h2>
 
-<h1>
+        <p>
+            Chua Tong Hin Marketing<br>
+            Sdn. Bhd.
+        </p>
 
-Brandon Chua
+        <a href="contact.vcf"
+           download
+           class="saveButton">
 
-</h1>
+            <span class="plus">+</span>
 
-<h2>
+            <span>Save Contact</span>
 
-Director
+        </a>
 
-</h2>
+        <div class="buttonRow three">
 
-<p>
+            <a href="tel:+60123046180"
+               class="actionButton">
 
-Chua Tong Hin Marketing<br>
+                <i data-lucide="phone"></i>
 
-Sdn. Bhd.
+                <span>Phone</span>
 
-</p>
+            </a>
 
-<!-- Save Contact -->
+            <a href="https://wa.me/60123046180"
+               target="_blank"
+               class="actionButton">
 
-<a
-href="contact.vcf"
-download
-class="saveButton">
+                <i data-lucide="message-circle"></i>
 
-<svg class="icon"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2">
+                <span>WhatsApp</span>
 
-<path d="M12 5v14"/>
+            </a>
 
-<path d="M5 12h14"/>
+            <a href="mailto:chuatonghin@gmail.com"
+               class="actionButton">
 
-</svg>
+                <i data-lucide="mail"></i>
 
-Save Contact
+                <span>Email</span>
 
-</a>
+            </a>
 
-<!-- Row 1 -->
+        </div>
 
-<div class="buttonRow three">
+        <div class="buttonRow two">
 
-<a
-href="tel:+60123046180"
-class="actionButton">
+            <a href="https://waze.com/ul/hw2860y1bw"
+               target="_blank"
+               class="actionButton">
 
-<svg class="icon"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2">
+                <i data-lucide="map-pin"></i>
 
-<path d="M22 16.92V20a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.29 19A19.5 19.5 0 0 1 5 12.71 19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4 2h3.09a2 2 0 0 1 2 1.72l.39 2.58a2 2 0 0 1-.57 1.73L7.09 9.91a16 16 0 0 0 7 7l1.88-1.82a2 2 0 0 1 1.73-.57l2.58.39A2 2 0 0 1 22 16.92z"/>
+                <span>HQ</span>
 
-</svg>
+            </a>
 
-Phone
+            <a href="https://waze.com/ul/hw281eju5t"
+               target="_blank"
+               class="actionButton">
 
-</a>
+                <i data-lucide="warehouse"></i>
 
-<a
-href="https://wa.me/60123046180"
-class="actionButton">
+                <span>Warehouse</span>
 
-<iconify-icon
-icon="logos:whatsapp-icon"
-width="26"
-height="26">
-</iconify-icon>
+            </a>
 
-<span>WhatsApp</span>
+        </div>
 
-</a>
+        <button id="shareButton"
+                class="shareButton">
 
-<a
-href="mailto:chuatonghin@gmail.com"
-class="actionButton">
+            <i data-lucide="share-2"></i>
 
-<svg class="icon"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2">
+            <span>Share</span>
 
-<path d="M4 4h16v16H4z"/>
+        </button>
 
-<path d="M22 6l-10 7L2 6"/>
-
-</svg>
-
-Email
-
-</a>
+    </div>
 
 </div>
 
-<!-- Row 2 -->
+<script src="https://unpkg.com/lucide@latest"></script>
 
-<div class="buttonRow two">
-
-<a
-href="https://waze.com/ul/hw2860y1bw"
-target="_blank"
-class="actionButton">
-
-<svg class="icon"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round">
-
-<path d="M12 22s7-6.2 7-13a7 7 0 1 0-14 0c0 6.8 7 13 7 13z"/>
-
-<circle
-cx="12"
-cy="9"
-r="2.5"/>
-
-</svg>
-
-HQ
-
-</a>
-
-<a
-href="https://waze.com/ul/hw281eju5t"
-target="_blank"
-class="actionButton">
-
-<svg class="icon"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round">
-
-<path d="M3 7h18v10H3z"/>
-
-<path d="M7 7V5h10v2"/>
-
-<path d="M9 12h6"/>
-
-</svg>
-
-Warehouse
-
-</a>
-
-</div>
-
-<!-- Share Button -->
-
-<button
-id="shareButton"
-class="shareButton">
-
-<svg
-class="icon"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round">
-
-<circle
-cx="18"
-cy="5"
-r="3"/>
-
-<circle
-cx="6"
-cy="12"
-r="3"/>
-
-<circle
-cx="18"
-cy="19"
-r="3"/>
-
-<path
-d="M8.6 13.5l6.8 3.9"/>
-
-<path
-d="M15.4 6.6L8.6 10.5"/>
-
-</svg>
-
-Share
-
-</button>
-
-</div>
-
-</div>
+<script>
+lucide.createIcons();
+</script>
 
 <script src="script.js"></script>
 
-<script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
-
 </body>
-
-</html>
