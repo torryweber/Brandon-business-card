@@ -36,12 +36,7 @@ body{
 
     font-family:"Inter",sans-serif;
 
-    background:linear-gradient(
-    180deg,
-    #b56a16 0%,
-    #8d5212 50%,
-    #6f3f0c 100%
-);
+    background:#090909;
 
     color:var(--text);
 
@@ -71,20 +66,33 @@ body{
 
     position:fixed;
 
-    inset:-40%;
-
-    width:180%;
-    height:180%;
+    inset:0;
 
     overflow:hidden;
 
     background:
-        radial-gradient(circle at 20% 20%, rgba(245,130,32,.40), transparent 35%),
-        radial-gradient(circle at 80% 25%, rgba(255,170,60,.30), transparent 40%),
-        radial-gradient(circle at 50% 90%, rgba(245,130,32,.25), transparent 45%),
-        linear-gradient(180deg,#1b1b1b 0%,#090909 100%);
 
-    z-index:-999;
+    radial-gradient(circle at 15% 15%,
+    rgba(245,130,32,.28),
+    transparent 28%),
+
+    radial-gradient(circle at 85% 25%,
+    rgba(255,180,70,.22),
+    transparent 35%),
+
+    radial-gradient(circle at 50% 100%,
+    rgba(245,130,32,.18),
+    transparent 42%),
+
+    linear-gradient(
+
+    180deg,
+
+    #161616,
+
+    #080808);
+
+    z-index:-5;
 
 }
 
@@ -159,20 +167,22 @@ body{
     overflow:hidden;
 
     backdrop-filter:blur(32px);
+
     -webkit-backdrop-filter:blur(32px);
 
-    background:rgba(36,24,14,.52);
+    background:var(--card);
 
-    border:1px solid rgba(255,255,255,.08);
+    border-radius:34px;
 
-    border-radius:36px;
+    border:1px solid rgba(255,255,255,.10);
 
     padding:30px;
 
     box-shadow:
-        0 40px 120px rgba(0,0,0,.45),
-        0 0 100px rgba(245,130,32,.28),
-        inset 0 1px 0 rgba(255,255,255,.10);
+
+    0 40px 90px rgba(0,0,0,.45),
+
+    0 0 70px rgba(245,130,32,.18);
 
 }
 
@@ -900,64 +910,3 @@ html{
 
 }
 
-/* Ripple */
-
-.actionButton,
-.saveButton,
-.shareButton{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.ripple{
-
-    position:absolute;
-
-    width:12px;
-
-    height:12px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.45);
-
-    transform:translate(-50%,-50%) scale(0);
-
-    animation:ripple .6s linear;
-
-    pointer-events:none;
-
-}
-
-@keyframes ripple{
-
-    to{
-
-        transform:translate(-50%,-50%) scale(20);
-
-        opacity:0;
-
-    }
-
-}
-
-/* Glass Spotlight */
-
-.card{
-
-    background:
-
-    radial-gradient(
-
-    circle at var(--x,50%) var(--y,50%),
-
-    rgba(255,255,255,.10),
-
-    transparent 180px),
-
-    var(--card);
-
-}
