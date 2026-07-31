@@ -167,22 +167,20 @@ body{
     overflow:hidden;
 
     backdrop-filter:blur(32px);
-
     -webkit-backdrop-filter:blur(32px);
 
-    background:var(--card);
+    background:rgba(36,24,14,.52);
 
-    border-radius:34px;
+    border:1px solid rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.10);
+    border-radius:36px;
 
     padding:30px;
 
     box-shadow:
-
-    0 40px 90px rgba(0,0,0,.45),
-
-    0 0 70px rgba(245,130,32,.18);
+        0 40px 120px rgba(0,0,0,.45),
+        0 0 100px rgba(245,130,32,.28),
+        inset 0 1px 0 rgba(255,255,255,.10);
 
 }
 
