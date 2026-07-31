@@ -71,33 +71,20 @@ body{
 
     position:fixed;
 
-    inset:0;
+    inset:-40%;
+
+    width:180%;
+    height:180%;
 
     overflow:hidden;
 
     background:
+        radial-gradient(circle at 20% 20%, rgba(245,130,32,.40), transparent 35%),
+        radial-gradient(circle at 80% 25%, rgba(255,170,60,.30), transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(245,130,32,.25), transparent 45%),
+        linear-gradient(180deg,#1b1b1b 0%,#090909 100%);
 
-    radial-gradient(circle at 15% 15%,
-    rgba(245,130,32,.28),
-    transparent 28%),
-
-    radial-gradient(circle at 85% 25%,
-    rgba(255,180,70,.22),
-    transparent 35%),
-
-    radial-gradient(circle at 50% 100%,
-    rgba(245,130,32,.18),
-    transparent 42%),
-
-    linear-gradient(
-
-    180deg,
-
-    #161616,
-
-    #080808);
-
-    z-index:-5;
+    z-index:-999;
 
 }
 
