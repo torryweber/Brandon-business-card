@@ -909,3 +909,65 @@ html{
     opacity:1;
 
 }
+
+/* Ripple */
+
+.actionButton,
+.saveButton,
+.shareButton{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.ripple{
+
+    position:absolute;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.45);
+
+    transform:translate(-50%,-50%) scale(0);
+
+    animation:ripple .6s linear;
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:translate(-50%,-50%) scale(20);
+
+        opacity:0;
+
+    }
+
+}
+
+/* Glass Spotlight */
+
+.card{
+
+    background:
+
+    radial-gradient(
+
+    circle at var(--x,50%) var(--y,50%),
+
+    rgba(255,255,255,.10),
+
+    transparent 180px),
+
+    var(--card);
+
+}
