@@ -1,7 +1,7 @@
-/* ===================================================
+/* ==========================================
    Brandon Chua Digital Business Card
-   Apple Inspired UI
-=================================================== */
+   Premium Apple Style
+========================================== */
 
 *{
     margin:0;
@@ -15,15 +15,24 @@ body{
     height:100%;
 }
 
+:root{
+
+    --orange:#f58220;
+    --orange-light:#ffb14a;
+    --card:rgba(30,30,32,.52);
+    --white:#ffffff;
+    --text:#ffffff;
+    --sub:#d8d8d8;
+
+}
+
 body{
 
     font-family:"Inter",sans-serif;
 
-    background:#f5f5f7;
+    background:#0d0d0f;
 
-    overflow:hidden;
-
-    color:#1d1d1f;
+    color:var(--text);
 
     display:flex;
 
@@ -31,16 +40,18 @@ body{
 
     align-items:center;
 
-    padding:
-        max(env(safe-area-inset-top),20px)
-        20px
-        max(env(safe-area-inset-bottom),20px);
+    overflow:hidden;
 
-    position:relative;
+    padding:
+        max(env(safe-area-inset-top),24px)
+        24px
+        max(env(safe-area-inset-bottom),24px);
 
 }
 
-/* Background */
+/* ==========================
+   Animated Background
+========================== */
 
 .background{
 
@@ -51,12 +62,12 @@ body{
     overflow:hidden;
 
     background:
-        radial-gradient(circle at 20% 20%, rgba(245,130,32,.22), transparent 35%),
-        radial-gradient(circle at 80% 25%, rgba(255,170,70,.18), transparent 40%),
-        radial-gradient(circle at 50% 90%, rgba(245,130,32,.20), transparent 45%),
-        linear-gradient(180deg,#141414,#090909);
+        radial-gradient(circle at 20% 15%, rgba(245,130,32,.35), transparent 30%),
+        radial-gradient(circle at 80% 25%, rgba(255,170,80,.25), transparent 35%),
+        radial-gradient(circle at 50% 90%, rgba(245,130,32,.22), transparent 40%),
+        linear-gradient(180deg,#151515,#090909);
 
-    z-index:-3;
+    z-index:-5;
 
 }
 
@@ -66,21 +77,23 @@ body{
 
     position:absolute;
 
-    width:520px;
+    width:850px;
 
-    height:520px;
+    height:850px;
+
+    left:-280px;
+
+    top:-220px;
 
     border-radius:50%;
 
-    background:rgba(245,130,32,.22);
+    background:#ff7a00;
 
-    filter:blur(120px);
+    opacity:.55;
 
-    top:-180px;
+    filter:blur(170px);
 
-    left:-120px;
-
-    animation:floatGlow1 12s ease-in-out infinite;
+    animation:glowLeft 14s ease-in-out infinite;
 
 }
 
@@ -90,159 +103,67 @@ body{
 
     position:absolute;
 
-    width:420px;
+    width:780px;
 
-    height:420px;
+    height:780px;
 
-    border-radius:50%;
+    right:-240px;
 
-    background:rgba(255,180,80,.16);
-
-    filter:blur(100px);
-
-    bottom:-150px;
-
-    right:-120px;
-
-    animation:floatGlow2 14s ease-in-out infinite;
-
-}
-
-@keyframes floatGlow1{
-
-    0%{
-        transform:translate(0,0);
-    }
-
-    50%{
-        transform:translate(40px,30px);
-    }
-
-    100%{
-        transform:translate(0,0);
-    }
-
-}
-
-@keyframes floatGlow2{
-
-    0%{
-        transform:translate(0,0);
-    }
-
-    50%{
-        transform:translate(-35px,-25px);
-    }
-
-    100%{
-        transform:translate(0,0);
-    }
-
-}
-
-/* Floating glow */
-
-.background::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:420px;
-
-    height:420px;
+    bottom:-220px;
 
     border-radius:50%;
 
-    background:
+    background:#ffb347;
 
-    rgba(245,130,32,.18);
+    opacity:.40;
 
-    filter:blur(120px);
+    filter:blur(170px);
 
-    top:-80px;
-
-    right:-80px;
-
-    animation:
-    floatGlow 10s ease-in-out infinite;
+    animation:glowRight 18s ease-in-out infinite;
 
 }
 
-/* Container */
+/* ==========================
+   Layout
+========================== */
 
 .container{
 
     width:100%;
 
-    max-width:420px;
+    max-width:430px;
 
 }
 
-/* Card */
-
 .card{
 
-    backdrop-filter:blur(28px);
-    -webkit-backdrop-filter:blur(28px);
+    backdrop-filter:blur(35px);
 
-    background:rgba(28,28,30,.72);
+    -webkit-backdrop-filter:blur(35px);
+
+    background:var(--card);
 
     border:1px solid rgba(255,255,255,.10);
 
     border-radius:34px;
 
+    padding:30px;
+
     box-shadow:
-        0 25px 80px rgba(0,0,0,.45),
-        0 0 60px rgba(245,130,32,.10);
+
+        0 35px 90px rgba(0,0,0,.45),
+
+        0 0 60px rgba(245,130,32,.20),
+
+        inset 0 1px rgba(255,255,255,.08);
+
+    animation:cardAppear .8s ease;
 
 }
 
-/* Name */
-
-h1{
-
-    margin-top:10px;
-
-    font-size:34px;
-
-    font-weight:800;
-
-    text-align:center;
-
-    letter-spacing:-1px;
-
-}
-
-h2{
-
-    margin-top:6px;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    color:#f58220;
-
-    text-align:center;
-
-}
-
-p{
-
-    margin-top:10px;
-
-    line-height:1.6;
-
-    color:#666;
-
-    text-align:center;
-
-    font-size:15px;
-
-}
-
-/* Logo + Profile */
+/* ==========================================
+   Logo & Profile
+========================================== */
 
 .top{
 
@@ -252,16 +173,17 @@ p{
 
     align-items:center;
 
-    gap:28px;
+    gap:30px;
 
-    margin-bottom:12px;
+    margin-bottom:18px;
 
 }
 
 .logo{
 
-    width:200px;
-    height:120px;
+    width:140px;
+
+    height:95px;
 
     object-fit:contain;
 
@@ -269,53 +191,102 @@ p{
 
     border:none;
 
-    border-radius:0;
-
-    padding:0;
-
     box-shadow:none;
 
-    transform:translateY(-4px);
-
-    transition:.3s ease;
+    animation:floatLogo 7s ease-in-out infinite;
 
 }
 
 .profile{
 
-    width:92px;
+    width:108px;
 
-    height:92px;
-
-    border-radius:50%;
+    height:108px;
 
     object-fit:cover;
 
-    border:4px solid white;
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.95);
 
     box-shadow:
 
-    0 12px 30px rgba(245,130,32,.22);
+        0 20px 50px rgba(245,130,32,.35);
+
+    animation:floatProfile 7s ease-in-out infinite;
 
 }
 
-/* Save Contact */
+/* ==========================================
+   Typography
+========================================== */
+
+h1{
+
+    text-align:center;
+
+    font-size:58px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    letter-spacing:-2px;
+
+    margin-top:6px;
+
+}
+
+h2{
+
+    text-align:center;
+
+    color:var(--orange);
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-top:10px;
+
+}
+
+p{
+
+    text-align:center;
+
+    color:#d7d7d7;
+
+    line-height:1.6;
+
+    font-size:22px;
+
+    margin-top:22px;
+
+}
+
+/* ==========================================
+   Save Contact
+========================================== */
 
 .saveButton{
 
-    margin-top:24px;
-
     width:100%;
 
-    height:56px;
+    height:72px;
 
-    border-radius:18px;
+    margin-top:34px;
 
-    background:#f58220;
-
-    color:white;
+    border-radius:24px;
 
     text-decoration:none;
+
+    background:linear-gradient(
+        135deg,
+        #ff9832,
+        #f58220);
+
+    color:white;
 
     display:flex;
 
@@ -323,73 +294,79 @@ p{
 
     justify-content:center;
 
-    gap:10px;
+    gap:16px;
+
+    font-size:20px;
 
     font-weight:700;
 
-    transition:.25s;
-
     box-shadow:
 
-    0 15px 35px rgba(245,130,32,.35);
+        0 18px 45px rgba(245,130,32,.40);
+
+    transition:.25s;
 
 }
 
-.saveButton:hover{
+.plus{
 
-    transform:translateY(-2px);
+    font-size:46px;
+
+    font-weight:300;
+
+    line-height:1;
 
 }
 
-.icon{
+.saveButton:active{
 
-    width:20px;
+    transform:scale(.97);
 
-    height:20px;
+    background:white;
+
+    color:var(--orange);
 
 }
 
 /* ==========================================
-   Action Buttons
+   Buttons
 ========================================== */
 
 .buttonRow{
 
     display:grid;
 
-    gap:14px;
+    gap:18px;
 
-    margin-top:18px;
+    margin-top:22px;
 
 }
 
 .buttonRow.three{
 
-    grid-template-columns:
-    repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
 }
 
 .buttonRow.two{
 
-    grid-template-columns:
-    repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
 }
 
 .actionButton{
 
-    height:72px;
+    height:110px;
 
-    border-radius:20px;
+    border-radius:24px;
 
-    background:rgba(255,255,255,.82);
+    background:rgba(255,255,255,.18);
 
-    border:1px solid rgba(255,255,255,.65);
+    border:1px solid rgba(255,255,255,.22);
 
     text-decoration:none;
 
-    color:#1d1d1f;
+    color:white;
 
     display:flex;
 
@@ -399,20 +376,31 @@ p{
 
     align-items:center;
 
-    gap:8px;
+    gap:14px;
 
-    font-size:14px;
+    transition:.25s;
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+}
+
+.actionButton i{
+
+    width:30px;
+
+    height:30px;
+
+    stroke-width:2;
+
+}
+
+.actionButton span{
+
+    font-size:18px;
 
     font-weight:600;
-
-    transition:all .25s ease;
-
-    backdrop-filter:blur(16px);
-
-    -webkit-backdrop-filter:blur(16px);
-
-    box-shadow:
-        0 8px 22px rgba(0,0,0,.05);
 
 }
 
@@ -420,16 +408,17 @@ p{
 
     transform:translateY(-4px);
 
-    background:#ffffff;
-
-    box-shadow:
-        0 16px 35px rgba(245,130,32,.20);
-
 }
 
 .actionButton:active{
 
-    transform:scale(.96);
+    transform:scale(.95);
+
+    background:white;
+
+    color:#111;
+
+    border-color:white;
 
 }
 
@@ -441,89 +430,59 @@ p{
 
     width:100%;
 
-    height:56px;
+    height:72px;
 
-    margin-top:20px;
+    margin-top:24px;
 
     border:none;
 
-    border-radius:18px;
+    border-radius:24px;
 
-    background:#1d1d1f;
+    background:#1b1b1f;
 
     color:white;
 
-    font-family:inherit;
-
-    font-size:16px;
+    font-size:20px;
 
     font-weight:700;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    gap:10px;
+    justify-content:center;
 
-    cursor:pointer;
+    gap:16px;
 
     transition:.25s;
 
-}
-
-.shareButton:hover{
-
-    transform:translateY(-2px);
+    cursor:pointer;
 
 }
 
 .shareButton:active{
 
-    transform:scale(.98);
+    transform:scale(.97);
+
+    background:white;
+
+    color:var(--orange);
 
 }
 
 /* ==========================================
-   Links
+   Apple Floating Animation
 ========================================== */
 
-a{
-
-    -webkit-tap-highlight-color:transparent;
-
-}
-
-/* ==========================================
-   Animation
-========================================== */
-
-.card{
-
-    animation:cardFade .8s ease;
-
-}
-
-.logo{
-
-    animation:floatLogo 6s ease-in-out infinite;
-
-}
-
-.profile{
-
-    animation:floatProfile 6s ease-in-out infinite;
-
-}
-
-@keyframes cardFade{
+@keyframes cardAppear{
 
     from{
 
         opacity:0;
 
-        transform:translateY(25px);
+        transform:
+            translateY(35px)
+            scale(.96);
 
     }
 
@@ -531,7 +490,9 @@ a{
 
         opacity:1;
 
-        transform:none;
+        transform:
+            translateY(0)
+            scale(1);
 
     }
 
@@ -539,176 +500,310 @@ a{
 
 @keyframes floatLogo{
 
-    0%{transform:translateY(0);}
-
-    50%{transform:translateY(-5px);}
-
-    100%{transform:translateY(0);}
-
-}
-
-@keyframes floatProfile{
-
-    0%{transform:translateY(0);}
-
-    50%{transform:translateY(5px);}
-
-    100%{transform:translateY(0);}
-
-}
-
-@keyframes floatGlow{
-
     0%{
 
-        transform:translate(0,0);
+        transform:translateY(0);
 
     }
 
     50%{
 
-        transform:translate(-25px,20px);
+        transform:translateY(-8px);
 
     }
 
     100%{
 
-        transform:translate(0,0);
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes floatProfile{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes glowLeft{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(60px,30px)
+        scale(1.15);
+
+    }
+
+    100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+}
+
+@keyframes glowRight{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(-50px,-40px)
+        scale(1.1);
+
+    }
+
+    100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
 
     }
 
 }
 
 /* ==========================================
-   Responsive
+   Glass Reflection
+========================================== */
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:34px;
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        rgba(255,255,255,.18),
+
+        rgba(255,255,255,.05) 35%,
+
+        transparent 60%
+
+    );
+
+    pointer-events:none;
+
+}
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-45%;
+
+    left:-35%;
+
+    width:180%;
+
+    height:180%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(255,255,255,.10),
+
+            transparent 60%
+
+        );
+
+    animation:
+
+        shimmer 12s linear infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes shimmer{
+
+    from{
+
+        transform:
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================
+   Premium Hover
+========================================== */
+
+.actionButton,
+.saveButton,
+.shareButton{
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+    -webkit-touch-callout:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+.actionButton:hover{
+
+    box-shadow:
+
+        0 20px 40px rgba(245,130,32,.22);
+
+}
+
+.saveButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 25px 55px rgba(245,130,32,.45);
+
+}
+
+.shareButton:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   Responsive iPhone
 ========================================== */
 
 @media (max-width:430px){
 
     .card{
 
-        padding:22px;
-
-        border-radius:28px;
+        padding:24px;
 
     }
 
     h1{
 
-        font-size:30px;
+        font-size:36px;
 
     }
 
-    .logo,
-    .profile{
+    h2{
 
-        width:82px;
-
-        height:82px;
-
-    }
-
-    .actionButton{
-
-        height:68px;
-
-        font-size:13px;
-
-    }
-
-}
-
-/* ==========================================
-   Dark Mode
-========================================== */
-
-@media (prefers-color-scheme:dark){
-
-    body{
-
-        background:#000;
-
-        color:#fff;
-
-    }
-
-    .background{
-
-        background:
-        linear-gradient(
-        180deg,
-        #111,
-        #000);
-
-    }
-
-    .card{
-
-        background:
-        rgba(35,35,35,.72);
-
-        border:
-        1px solid rgba(255,255,255,.08);
+        font-size:18px;
 
     }
 
     p{
 
-        color:#cfcfcf;
+        font-size:15px;
+
+    }
+
+    .logo{
+
+        width:120px;
+
+        height:80px;
+
+    }
+
+    .profile{
+
+        width:96px;
+
+        height:96px;
 
     }
 
     .actionButton{
 
-        background:
-        rgba(60,60,60,.78);
-
-        color:#fff;
+        height:82px;
 
     }
+
+    .actionButton span{
+
+        font-size:13px;
+
+    }
+
+    .saveButton,
 
     .shareButton{
 
-        background:#f58220;
+        height:60px;
+
+        font-size:16px;
 
     }
 
-}
+    .plus{
 
-/* Toast */
+        font-size:34px;
 
-.toast{
-
-    position:fixed;
-
-    left:50%;
-
-    bottom:40px;
-
-    transform:translateX(-50%);
-
-    background:#1d1d1f;
-
-    color:#fff;
-
-    padding:12px 22px;
-
-    border-radius:999px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    opacity:0;
-
-    transition:.3s;
-
-    z-index:9999;
-
-}
-
-.toast.show{
-
-    opacity:1;
+    }
 
 }
